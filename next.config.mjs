@@ -17,7 +17,7 @@ const nextConfig = {
   webpack(cfg) {
     const r = (p) => path.resolve(__dirname, p);
     cfg.resolve.alias = {
-      ...cfg.resolve.alias,         // preserva aliases do Next
+      ...cfg.resolve.alias,
       '@':            r('components'),
       '@/components': r('components'),
       '@/lib':        r('lib'),
