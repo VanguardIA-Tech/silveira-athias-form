@@ -3,6 +3,8 @@ import { fileURLToPath } from 'url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
@@ -14,8 +16,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/silveira-athias',
-  assetPrefix: '/silveira-athias/',
+  basePath,
+  assetPrefix: basePath + '/',
   output: 'export',
   webpack: (config) => {
     config.resolve.alias['@'] = path.resolve(__dirname, 'components')
