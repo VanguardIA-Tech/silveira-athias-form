@@ -15,8 +15,8 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  NEXT_PUBLIC_BASE_PATH: ${{ secrets.NEXT_PUBLIC_BASE_PATH }}
-  DATABASE_URL: ${{ secrets.DATABASE_URL }}
+  NEXT_PUBLIC_BASE_PATH: /silveira-athias
+  DATABASE_URL: postgres://neondb_owner:npg_qC7EgVe9XyWD@ep-floral-recipe-a4bx7m77-pooler.us-east-1.aws.neon.tech/neondb?sslmode=require
 
 jobs:
   build:
