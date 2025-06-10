@@ -22,7 +22,7 @@ const nextConfig = {
       '@/components': r('components'),
       '@/lib':        r('lib'),
       '@/hooks':      r('hooks'),
-      '@/ui':         r('components/ui'),
+      '@/ui':         r('components/ui')
     };
     return cfg;
   },
