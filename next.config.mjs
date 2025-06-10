@@ -6,7 +6,6 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // gera ./out no `next build`
   images:      { unoptimized: true },
   eslint:      { ignoreDuringBuilds: true },
   typescript:  { ignoreBuildErrors: true },
