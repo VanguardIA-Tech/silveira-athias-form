@@ -1,32 +1,32 @@
-import path from 'path'
-import { fileURLToPath } from 'url'
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
-
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const isProd = process.env.NODE_ENV === 'production';
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  images: {
-    unoptimized: true,
-  },
+export default {
+  output: 'export',          // mantém geração da pasta out/
   basePath,
-  assetPrefix: basePath + '/',
-  output: 'export',
-  webpack: (config) => {
-    config.resolve.alias['@'] = path.resolve(__dirname, 'components')
-    config.resolve.alias['@/components'] = path.resolve(__dirname, 'components')
-    config.resolve.alias['@/lib'] = path.resolve(__dirname, 'lib')
-    config.resolve.alias['@/hooks'] = path.resolve(__dirname, 'hooks')
-    config.resolve.alias['@/ui'] = path.resolve(__dirname, 'components/ui')
-    return config
-  }
-}
+  assetPrefix: basePath ? `${basePath}/` : '',
+  eslint:      { ignoreDuringBuilds: true },
+  typescript:  { ignoreBuildErrors: true },
+  images:      { unoptimized: true },
 
-export default nextConfig
+  webpack(config) {
+    const r = (p) => path.resolve(__dirname, p);
+
+    // 👉 preserva os aliases que o Next cria
+    config.resolve.alias = {
+      ...config.resolve.alias,           // NÃO remova esta linha!
+      '@':            r('components'),
+      '@/components': r('components'),
+      '@/lib':        r('lib'),
+      '@/hooks':      r('hooks'),
+      '@/ui':         r('components/ui'),
+    };
+
+    return config;
+  },
+};
