@@ -8,7 +8,7 @@ import { Card } from "@/ui/card";
 import CompletionStep from "@/steps/completion-step";
 import LogoSilveira from "./LogoSilveira";
 import LogoVanguardia from "./LogoVanguardia";
-const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 
 const steps = [
   {
@@ -158,7 +158,7 @@ export default function OnboardingWizard() {
     // Se estiver no passo de priorização, envia para a API de voting apenas as prioridades
     if (currentStep === 1) {
       try {
-        const res = await fetch(`${BASE_PATH}/api/voting`, {
+        const res = await fetch(`/api/voting`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData.parte1),
@@ -174,7 +174,7 @@ export default function OnboardingWizard() {
     // Se estiver no passo das discursivas, envia PATCH para atualizar a linha criada na parte 1
     if (currentStep === 2 && lastRespostaId) {
       try {
-        await fetch(`${BASE_PATH}/api/voting`, {
+        await fetch(`/api/voting`, {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ id: lastRespostaId, ...formData.parte2 }),
