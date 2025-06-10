@@ -2,9 +2,9 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import LandingPage from "@/components/landing-page"
-import LoadingScreen from "@/components/loading-screen"
-import OnboardingWizard from "@/components/onboarding-wizard"
+import LandingPage from "@/landing-page"
+import LoadingScreen from "@/loading-screen"
+import OnboardingWizard from "@/onboarding-wizard"
 
 type AppState = "landing" | "loading" | "wizard"
 

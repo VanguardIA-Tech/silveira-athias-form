@@ -3,9 +3,9 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle, ChevronLeft, ChevronRight, Unlock } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import CompletionStep from "@/components/steps/completion-step";
+import { Button } from "@/ui/button";
+import { Card } from "@/ui/card";
+import CompletionStep from "@/steps/completion-step";
 import LogoSilveira from "./LogoSilveira";
 import LogoVanguardia from "./LogoVanguardia";
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";

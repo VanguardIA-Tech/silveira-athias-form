@@ -3,10 +3,10 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import NextImage from "next/image";
-import RealTimeDashboard from "@/components/real-time-dashboard";
-import { DatabaseProvider } from "@/components/dashboard/database-context";
-import LogoSilveira from "@/components/LogoSilveira";
-import LogoVanguardia from "@/components/LogoVanguardia";
+import RealTimeDashboard from "@/real-time-dashboard";
+import { DatabaseProvider } from "@/dashboard/database-context";
+import LogoSilveira from "@/LogoSilveira";
+import LogoVanguardia from "@/LogoVanguardia";
 
 export default function DashboardPage() {
   const [isLoading, setIsLoading] = useState(true);

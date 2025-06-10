@@ -3,14 +3,14 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import NextImage from "next/image";
-import { useDatabase } from "@/components/dashboard/database-context";
-import VoteCounter from "@/components/dashboard/vote-counter";
-import ResultsChart from "@/components/dashboard/results-chart";
-import DecisionDisplay from "@/components/dashboard/decision-display";
-import ActiveVoters from "@/components/dashboard/active-voters";
+import { useDatabase } from "@/dashboard/database-context";
+import VoteCounter from "@/dashboard/vote-counter";
+import ResultsChart from "@/dashboard/results-chart";
+import DecisionDisplay from "@/dashboard/decision-display";
+import ActiveVoters from "@/dashboard/active-voters";
 import { ArrowRight, BarChart3, Users, CheckCircle, Clock } from "lucide-react";
-import { Card } from "@/components/ui/card";
-import OnboardingStats from "@/components/dashboard/onboarding-stats";
+import { Card } from "@/ui/card";
+import OnboardingStats from "@/dashboard/onboarding-stats";
 import LogoSilveira from "./LogoSilveira";
 
 type DashboardState = "waiting" | "voting" | "results" | "decision";

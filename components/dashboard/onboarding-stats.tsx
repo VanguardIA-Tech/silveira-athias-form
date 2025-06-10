@@ -1,7 +1,7 @@
 "use client"
 import { useDatabase } from "./database-context"
 import { BarChart3, Users, Target, TrendingUp } from "lucide-react"
-import { Card } from "@/components/ui/card"
+import { Card } from "@/ui/card"
 
 export default function OnboardingStats() {
   const { onboardingStats, isLoading } = useDatabase()
