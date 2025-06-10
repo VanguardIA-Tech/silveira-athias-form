@@ -4,8 +4,8 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
-    "start": "next start",
+    "build": "next build",
+    "start": "npx serve -s out -l $PORT",
     "lint": "next lint"
   },
   "dependencies": {
