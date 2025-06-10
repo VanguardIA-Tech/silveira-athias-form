@@ -129,7 +129,7 @@ export default function LandingPage({ onUnlock }: LandingPageProps) {
             {/* Borda Pulsante Externa */}
             {animationPhase === "idle" && (
               <motion.div
-                className="absolute inset-0 rounded-full border-2 border-amber-400/60"
+                className="absolute -inset-2 rounded-full border-2 border-amber-400/60"
                 animate={{
                   scale: [1, 1.15, 1],
                   opacity: [0.6, 0.2, 0.6],
@@ -139,14 +139,13 @@ export default function LandingPage({ onUnlock }: LandingPageProps) {
                   repeat: Number.POSITIVE_INFINITY,
                   ease: "easeInOut",
                 }}
-                style={{ transform: "translate(-4px, -4px)", width: "calc(100% + 8px)", height: "calc(100% + 8px)" }}
               />
             )}
 
             {/* Segunda Borda Pulsante */}
             {animationPhase === "idle" && (
               <motion.div
-                className="absolute inset-0 rounded-full border border-cyan-500/40"
+                className="absolute -inset-4 rounded-full border border-cyan-500/40"
                 animate={{
                   scale: [1, 1.25, 1],
                   opacity: [0.4, 0.1, 0.4],
@@ -157,7 +156,6 @@ export default function LandingPage({ onUnlock }: LandingPageProps) {
                   ease: "easeInOut",
                   delay: 0.5,
                 }}
-                style={{ transform: "translate(-8px, -8px)", width: "calc(100% + 16px)", height: "calc(100% + 16px)" }}
               />
             )}
 
